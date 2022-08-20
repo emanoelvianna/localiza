@@ -1,11 +1,10 @@
-const {
-  DB_USER,
-  DB_PASSWORD,
-  DB_HOST,
-  DB_PORT,
-  DB_NAME,
-} = process.env;
+const mongoose = require("mongoose");
 
-module.exports = {
-  url: `mongodb://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}?authSource=admin`
-};
+mongoose.Promise = global.Promise;
+
+const db = {};
+db.mongoose = mongoose;
+db.url = `mongodb://user:password@0.0.0.0:27017/localizadb?authSource=admin`
+db.pessoas = require("../models/pessoa.js")(mongoose);
+
+module.exports = db;

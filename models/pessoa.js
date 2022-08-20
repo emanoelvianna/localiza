@@ -1,7 +1,25 @@
 const mongoose = require('mongoose')
 
-const UserSchema = new mongoose.Schema({
-    name: {
+const Pessoa = new mongoose.Schema({
+    nome: {
+        type: String,
+        required: true
+    },
+    cpf: {
+        type: String,
+        required: true,
+        unique: true,
+        lowercase: true
+    },
+    idade: {
+        type: Number,
+        required: true
+    },
+    dtNascimento: {
+        type: Date,
+        required: true
+    },
+    telefone: {
         type: String,
         required: true
     },
@@ -11,14 +29,10 @@ const UserSchema = new mongoose.Schema({
         unique: true,
         lowercase: true
     },
-    password: {
+    endereco: {
         type: String,
         required: true
     },
-    createdAt: {
-        type: Date,
-        default: Date.now
-    }
-})
+}, { versionKey: false });
 
-module.exports = mongoose.model('User', UserSchema)
+module.exports = mongoose.model('Pessoa', Pessoa);
