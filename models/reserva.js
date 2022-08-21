@@ -1,14 +1,14 @@
 const mongoose = require('mongoose')
 
 const Reserva = new mongoose.Schema({
-    idCarro: {
-        type: mongoose.Schema.Types.ObjectId,
+    placaCarro: {
+        type: String,
         ref: 'Carro',
         required: true
     },
-    idCliente: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Carro',
+    cpfCliente: {
+        type: String,
+        ref: 'Cliente',
         required: true
     },
     status: {

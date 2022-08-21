@@ -13,6 +13,10 @@ const Carro = mongoose.Schema({
         type: String,
         required: true
     },
+    tipo: {
+        type: String,
+        required: true
+    },
     quilometragem: {
         type: Number,
         required: false
@@ -23,7 +27,7 @@ const Carro = mongoose.Schema({
     },
     observacao: {
         type: String,
-        required: true
+        required: false
     }
 }, { versionKey: false });
 

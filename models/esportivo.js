@@ -1,12 +1,12 @@
 const mongoose = require('mongoose')
 
-const Utilitario = mongoose.Schema({
+const Esportivo = mongoose.Schema({
     idCarro: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Carro',
         required: true
     },
-    tpo100km: {
+    tp100km: {
         type: Number,
         required: false
     },
@@ -16,4 +16,4 @@ const Utilitario = mongoose.Schema({
     },
 }, { versionKey: false });
 
-module.exports = mongoose.model('Utilitario', Utilitario);
+module.exports = mongoose.model('Esportivo', Esportivo);
