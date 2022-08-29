@@ -1,6 +1,6 @@
 const Carro = require("../models/carro");
 
-module.exports = class PromocaoController {
+module.exports = class CarroController {
 
     static async inserir(req, res) {
         console.log(req.body)
